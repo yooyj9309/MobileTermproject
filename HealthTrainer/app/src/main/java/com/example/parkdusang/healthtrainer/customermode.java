@@ -35,7 +35,7 @@ public class customermode extends AppCompatActivity implements View.OnClickListe
         }
 
 
-
+/*
         handler = new Handler(){
 
             public void handleMessage(android.os.Message msg) {
@@ -43,7 +43,8 @@ public class customermode extends AppCompatActivity implements View.OnClickListe
                     viewPager.setCurrentItem(1);
                     p++;
                     v=1;
-                }if(p==1&&v==0){
+                }
+                if(p==1&&v==0){
                     viewPager.setCurrentItem(1);
                     p--;
                 }if(p==1&&v==1){
@@ -75,7 +76,7 @@ public class customermode extends AppCompatActivity implements View.OnClickListe
             }
         };
         thread.start();
-
+*/
     }
 
     @Override

@@ -25,7 +25,8 @@
         <activity android:name=".Register" />
         <activity android:name=".Customercontent1" />
         <activity android:name=".Customercontent2" />
-        <activity android:name=".Customercontent3"></activity>
+        <activity android:name=".Customercontent3" />
+        <activity android:name=".CustomerInformation"></activity>
     </application>
 
 </manifest>
