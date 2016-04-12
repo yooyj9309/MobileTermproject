@@ -35,13 +35,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.8"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <ListView
+
+    <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/listView2" />
-    </LinearLayout>
+            android:id="@+id/listView3"
+            android:choiceMode="singleChoice"/>
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send"/>
 </LinearLayout>

@@ -22,6 +22,7 @@ public class MyViewPagerAdapter extends FragmentStatePagerAdapter {
         fragments[0] = new Customercontent1();
         fragments[1] = new Customercontent2();
         fragments[2] = new Customercontent3();
+       // fragments[3] = new Customercontent4();
     }
 
     //아래의 메서드들의 호출 주체는 ViewPager이다.

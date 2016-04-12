@@ -14,6 +14,7 @@ public class Trainermode extends AppCompatActivity {
     // 처음 트레이너 모드로 로그인하면 들어오는 모드 list view 로 보여준다.
     ListView listView;
     FloatingActionButton btn;
+    ArrayList<MyCustomDTO> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,19 +24,19 @@ public class Trainermode extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent myAct1 = new Intent(getApplicationContext(), AddCustomer.class);
-                startActivity(myAct1);
+                startActivityForResult(myAct1,1);
 
             }
         });
-
-        ArrayList<MyCustomDTO> list = new ArrayList<MyCustomDTO>();
-        list.add(new MyCustomDTO("캐나다", "캐나다 테스트!", R.drawable.canada));
-        list.add(new MyCustomDTO("프랑스", "프랑스 테스트!", R.drawable.france));
-        list.add(new MyCustomDTO("대한민국", "대한민국 테스트!", R.drawable.korea));
-        list.add(new MyCustomDTO("멕시코", "멕시코 테스트!", R.drawable.mexico));
-        list.add(new MyCustomDTO("폴란드", "폴란드 테스트", R.drawable.poland));
-        list.add(new MyCustomDTO("폴란드", "폴란드 테스트", R.drawable.poland));
-        list.add(new MyCustomDTO("폴란드", "폴란드 테스트", R.drawable.poland));
+        // 이부분을 db 불러와서 저장해야됌 ㅇㅇ 겁나 빡실거임
+         list = new ArrayList<MyCustomDTO>();
+        list.add(new MyCustomDTO("홍길동", "홍길동 테스트!", R.drawable.user1));
+        list.add(new MyCustomDTO("영희", "영희 테스트!", R.drawable.user2));
+        list.add(new MyCustomDTO("철수", "철수 테스트!", R.drawable.user1));
+        list.add(new MyCustomDTO("마동석", "마동석 테스트!", R.drawable.user1));
+        list.add(new MyCustomDTO("루피", "루피 테스트", R.drawable.user1));
+        list.add(new MyCustomDTO("원펀맨", "원펀맨 테스트", R.drawable.user1));
+        list.add(new MyCustomDTO("아몰랑", "아몰랑 테스트", R.drawable.user2));
 
         listView = (ListView)findViewById(R.id.listView1);
 
@@ -46,14 +47,33 @@ public class Trainermode extends AppCompatActivity {
                         list);
 
         listView.setAdapter(adapter);
+
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent myAct = new Intent (getApplicationContext(), CustomerInformation.class);
-                //myAct.putExtra("sign",Integer.parseInt("2"));
+                String title  =list.get(position).getTitle().toString();
+                String content  =list.get(position).getContent().toString();
+                int imgid  =list.get(position).getImgIcon();
+                myAct.putExtra("imgid",imgid);
+                myAct.putExtra("title1",title);
+                myAct.putExtra("content1",content);
                 startActivity(myAct);
             }
         });
 
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK) // 액티비티가 정상적으로 종료되었을 경우
+        {
+            if (requestCode == 1) // CreateActivity에서 호출한 경우에만 처리
+            {
+
+            }
+        }
     }
 }
