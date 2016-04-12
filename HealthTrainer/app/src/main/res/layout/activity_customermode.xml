@@ -7,38 +7,40 @@
     tools:context="com.example.parkdusang.healthtrainer.Register">
 
 
-
-
     <LinearLayout
+        android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:id="@+id/linear1">
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/btn_a"
+            style="@style/Widget.AppCompat.ActionButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="A"
             android:background="#3edada"
-            style="@style/Widget.AppCompat.ActionButton"/>
+            android:text="홈" />
+
         <Button
             android:id="@+id/btn_b"
+            style="@style/Widget.AppCompat.ActionButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="B"
             android:background="#a9f47a"
-            style="@style/Widget.AppCompat.ActionButton"/>
+            android:text="기록" />
+
         <Button
             android:id="@+id/btn_c"
+            style="@style/Widget.AppCompat.ActionButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="C"
-            android:background="#e9d574"
-            style="@style/Widget.AppCompat.ActionButton"/>
+            android:background="#f4f9f965"
+            android:text="Inbody" />
+
 
     </LinearLayout>
 
@@ -46,5 +48,5 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/linear1"/>
+        android:layout_above="@id/linear1" />
 </RelativeLayout>

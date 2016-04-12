@@ -9,13 +9,12 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class customermode extends AppCompatActivity implements View.OnClickListener{
-    Button btn[] = new Button[3];
+   // Button btn[] = new Button[4];
+   Button btn[] = new Button[3];
     ViewPager viewPager = null;
     Thread thread = null;
     Handler handler = null;
-    int p=0;	//페이지번호
-    int v=1;	//화면 전환 뱡향
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +28,7 @@ public class customermode extends AppCompatActivity implements View.OnClickListe
         btn[0] = (Button)findViewById(R.id.btn_a);
         btn[1] = (Button)findViewById(R.id.btn_b);
         btn[2] = (Button)findViewById(R.id.btn_c);
-
+       // btn[3] = (Button)findViewById(R.id.btn_d);
         for(int i=0;i<btn.length; i++){
             btn[i].setOnClickListener(this);
         }
@@ -95,6 +94,12 @@ public class customermode extends AppCompatActivity implements View.OnClickListe
                 viewPager.setCurrentItem(2);
                 Toast.makeText(this,"C버튼", Toast.LENGTH_SHORT).show();
                 break;
+            /*
+            case R.id.btn_d:
+                viewPager.setCurrentItem(3);
+                Toast.makeText(this,"D버튼", Toast.LENGTH_SHORT).show();
+                break;
+            */
             default:
                 break;
 
